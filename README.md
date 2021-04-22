@@ -11,4 +11,6 @@ To create the app I used HTML, CSS, JAVASCRIPT, NODE, EXPRESS, MONGODB for the D
 I actually know some basic ReactJS but I decided to make the app just with vanilla JS just because I wanted to challenge myself. That's actually why I didn't use 
 bootstrap and some other modules that would've made my life a bit easier.
 
+Please keep in mind that the app isn't 100% ready and there might be some bugs.
+
 Link for the app: https://type-junkie.herokuapp.com/
