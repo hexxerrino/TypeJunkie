@@ -1,0 +1,39 @@
+<%- include('../partials/head'); %>
+<body>
+    <%- logedIn ? include('../partials/navbarAuth') : include('../partials/navbarNoAuth'); %>
+    <div class="container">
+        <div class="body width-issue">
+            <div class="textbox">
+                <div class="textbox-content glass">
+                    <div class="glass animated-box" style="--i:0;"></div>
+                <div class="glass animated-box" style="--i:1;"></div>
+                <div class="glass animated-box" style="--i:2;"></div>
+                    <p class="" id="text-content">
+                        <% for (var i = textBoxContent.length / 2; i < textBoxContent.length; i++) { %>
+                            <span><%= textBoxContent[i] %></span>
+                        <% } %>
+                        <!-- <%= textBoxContent %> -->
+                    </p>
+                    <p class="hide" id="text-content2">
+                        <% for (var i = 0; i < textBoxContent.length / 2; i++) { %>
+                            <span><%= textBoxContent[i] %></span>
+                        <% } %>
+                        <!-- <%= textBoxContent %> -->
+                    </p>
+                </div>
+            </div>
+            <h1 id="timer" class="glass">60</h1>
+            <div class="typebox">
+                <input class="glass" id="text-input" type="text" autocomplete="off">
+            </div>
+        </div>
+        <!-- <div class="footer glass">Three</div> -->
+    </div>
+
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/gameOver.js"></script>
+</body>
+</html>

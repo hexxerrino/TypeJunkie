@@ -1,0 +1,46 @@
+<%- include('../partials/head'); %>
+<body>
+    <%- include('../partials/navbarNoAuth'); %>
+    <div class="container">    
+        <div class="body">
+            <div class="glass textbox-content">
+                <div class="glass animated-box" style="--i:0;"></div>
+                <div class="glass animated-box" style="--i:1;"></div>
+                <div class="glass animated-box" style="--i:2;"></div>
+            <form id="reg" action="/auth/local/register" method="POST">
+                <label for="username"><b>Username</b></label>
+                <input class="glass" type="text" placeholder="Enter Username" name="username" required>
+                <br>
+                <label for="password"><b>Password</b></label>
+                <input class="glass" type="password" placeholder="Enter Password" name="password" required>
+                <br>
+                <label for="Cpassword"><b>Confirm Password</b></label>
+                <input class="glass" type="password" placeholder="Confirm Password" name="Cpassword" required>
+                <br>
+                <button class="glass" type="submit">Register</button>
+            </form>
+            <h1 style="color: red; font-size: 1rem;" id="error"><%= errorMessage %></h1>
+            <div class='g-sign-in-button'>
+                <a href="/auth/google">
+                <div class=content-wrapper>
+                    <div class='logo-wrapper'>
+                        <img src='https://developers.google.com/identity/images/g-logo.png'>
+                    </div>
+                    <span class='text-container'>
+                  <span>Sign in with Google</span>
+                </span>
+                </div>
+            </a>
+            </div>
+            </div>
+        </div>
+        <!-- <div class="footer glass">Three</div> -->
+    </div>
+
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="scripts/handleRegister.js"></script>
+    <script type="module" src="scripts/confirmPass.js"></script>
+</body>
+</html>

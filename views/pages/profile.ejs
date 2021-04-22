@@ -1,0 +1,28 @@
+<%- include('../partials/head'); %>
+<body>
+    <%- include('../partials/navbarAuth'); %>
+    <div class="container">
+        <div class="body">   
+                <div style="font-size: 1.5rem;">
+                    <h1>Hello, <%= username %> !</h1>
+                    <h1>Here is some data about your account</h1>
+                </div>
+                <div class="textbox-content glass">
+                    <div class="glass animated-box" style="--i:0;"></div>
+                    <div class="glass animated-box" style="--i:1;"></div>
+                    <div class="glass animated-box" style="--i:2;"></div>
+                    <p>Registration Date: <%= regDate %></p>
+                    <p>Playcount: <%= playCount %></p>
+                    <p>Your average score: <%= avgScore %></p>
+                </div>
+        </div>
+        <!-- <div class="footer glass">Three</div> -->
+    </div>
+
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/gameOver.js"></script>
+</body>
+</html>

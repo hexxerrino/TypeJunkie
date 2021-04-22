@@ -1,0 +1,37 @@
+<%- include('../partials/head'); %>
+<body>
+    <%- logedIn ? include('../partials/navbarAuth') : include('../partials/navbarNoAuth'); %>
+    <div class="container">
+        <div class="body">
+            <div class="textbox">
+                <div class="textbox-content glass">
+                    <div class="glass animated-box" style="--i:0;"></div>
+                <div class="glass animated-box" style="--i:1;"></div>
+                <div class="glass animated-box" style="--i:2;"></div>   
+                    <h1>Hello there!</h1>
+                    <p>This website is mainly created to showcase the skills i've gathered over the last couple of months of me studying web development!
+
+                    </p>
+                    <p>To build the app, I've used HTML, CSS, Javascript. I didn't use any frontend frameworks althought I have some 
+                        knowledge of REACT because I wanted to challenge myself with a project that is built only with vanilla Javascritp.
+                    </p>
+                    <p>If you're here from a company, if you want you can send me an e-mail with some suggestions for some features you want me to 
+                        implement. I think that's a good way for you to test my skills.
+                    </p>
+                    <p>If you actually just want to play the game, the rules are very simple. You just type as fast as possible and if
+                        you have an account you can track your proggress and also check the leaderboard to see where you stand 
+                        among the other players.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="footer glass">Three</div> -->
+    </div>
+
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/gameOver.js"></script>
+</body>
+</html>

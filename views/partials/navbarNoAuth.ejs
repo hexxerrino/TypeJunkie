@@ -1,0 +1,26 @@
+<div class="navbar glass">
+    <div class="navbar-left">
+        <h1>TypeJunkie</h1>
+    </div>
+    <div class="navbar-right" id="navnav">
+        <a href="/">Play!</a>
+        <a href="/leaderboard">Leaderboard</a>
+        <a href="/info">Info</a>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</div>
+
+<script>
+    function myFunction() {
+      var x = document.getElementById("navnav");
+      if (x.className === "navbar-right") {
+        x.className += " responsive";
+      } else {
+        x.className = "navbar-right";
+      }
+    }
+</script>
