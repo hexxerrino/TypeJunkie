@@ -1,4 +1,8 @@
 import GameOver from "./gameOver.js"
+import RandomArr from "./createRandomArray.js"
+
+console.log(RandomArr())
+document.getElementById("text-content").innerHTML = RandomArr()
 
 let wordNodeList = document.querySelectorAll("#text-content span")
 let wordArray = [];
@@ -25,7 +29,10 @@ const createUser = (score) => {
         .catch(error => console.error(error));
 };
 
-textInput.addEventListener("keydown", (event) => {
+
+let prevValue = ""
+let currValue = ""
+textInput.addEventListener("input", (event) => {
     // if (event.key.charCodeAt() < 65 || event.key.charCodeAt() > 90) {event.preventDefault(); event.target.value = "";  return}
     if(firstWordEver) {
         const interval = setInterval(() => {
@@ -42,8 +49,13 @@ textInput.addEventListener("keydown", (event) => {
         firstWordEver = false
     }
     
-    if (event.key === " ") {
-        if (event.target.value === wordArray[counterWord].innerHTML) {
+    let currentKey = event.data;
+    if (event.data.length > 1) {
+        currentKey = event.data[event.data.length - 1]
+    }
+    if (currentKey === " ") {
+        console.log(event.target.value === wordArray[counterWord].innerHTML + " ")
+        if (event.target.value === wordArray[counterWord].innerHTML + " ") {
             highlightWord(counterWord, true) 
             correctWords++
         }
@@ -51,12 +63,13 @@ textInput.addEventListener("keydown", (event) => {
         if (counterWord === wordArray.length - 1) {
             counterWord = 0
 
-            document.getElementById("text-content").className = "hide"
-            document.getElementById("text-content2").className = ""
-            wordNodeList = document.querySelectorAll("#text-content2 span")
+            document.getElementById("text-content").innerHTML = RandomArr()
+
+            wordNodeList = document.querySelectorAll("#text-content span")
             wordArray = []
             wordNodeList.forEach(word => {wordArray.push(word)})
             wordArray[0].classList.add('grey-highlight');
+            event.target.value = ""
             return
         }
         counterWord++
@@ -65,7 +78,7 @@ textInput.addEventListener("keydown", (event) => {
         event.preventDefault()
         return 
     }
-    if (event.key === wordArray[counterWord].innerHTML[counterChar]) {counterChar ++;}
+    if (currentKey === wordArray[counterWord].innerHTML[counterChar]) {counterChar ++;}
 })
 
 function highlightWord(counterWord, correct) {

@@ -19,16 +19,14 @@ const createRandomWord = () => {
         randomWord = randomWord + char;
     }
 
-    return randomWord;
+    return "<span>" + randomWord + "</span> ";
 }
 
 const createTheArray = () => {
-    const randomArr = [];
-    for (let index = 0; index < 50; index++) {
-        randomArr.push(createRandomWord());
+    let text = ""
+    for (let index = 0; index < 25; index++) {
+        text += createRandomWord()
     }
-    return randomArr
-    // .join(" ")
+    return text
 }
-
 export default createTheArray;
